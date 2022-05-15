@@ -7,14 +7,10 @@ name: Python application
 on:
   push:
     branches:
-      # While testing not run on main branch
-      #- master
-      # To run this on other branches as well
-      - work-manstatic-csaba
+      - master
   pull_request:
     branches:
-      #- master
-      - work-manstatic-csaba
+      - master
 
 jobs:
   build:
