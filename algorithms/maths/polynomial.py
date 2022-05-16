@@ -460,8 +460,6 @@ class Polynomial:
 
         raise ValueError('Can only divide a polynomial by an int, float, Fraction, or a Monomial.')
 
-        return
-
     # def clone(self) -> Polynomial:
     def clone(self):
         """
