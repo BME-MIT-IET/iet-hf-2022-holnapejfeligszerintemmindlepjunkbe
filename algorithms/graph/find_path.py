@@ -26,7 +26,7 @@ def find_all_path(graph, start, end, path=[]):
     path = path + [start]
     if start == end:
         return [path]
-    if not start in graph:
+    if start not in graph:
         return []
     paths = []
     for node in graph[start]:
