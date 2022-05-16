@@ -393,7 +393,6 @@ class Polynomial:
 
         else:
             raise ValueError('Can only subtract int, float, Fraction, Monomials, or Polynomials from Polynomials.')
-            return
 
     # def __mul__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __mul__(self, other: Union[int, float, Fraction, Monomial]):
