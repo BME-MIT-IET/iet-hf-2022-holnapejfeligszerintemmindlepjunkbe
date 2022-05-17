@@ -1,0 +1,5 @@
+Feladat:
+Egységtesztek készítése/kiegészítése (xUnit...) + tesztek kódlefedettségének mérése és ez alapján tesztkészlet bővítése (JaCoCo, OpenCover, Coveralls, Codecov.io...)
+
+assertion error when testing summarize function (solved)
+Error redirecting output for testing merge_intervals.print
