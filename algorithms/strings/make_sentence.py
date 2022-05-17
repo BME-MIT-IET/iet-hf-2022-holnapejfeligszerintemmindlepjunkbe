@@ -15,12 +15,12 @@ eg: for given string -> "appletablet"
 """
 TODO:   This algorithm has several problem and need to be fixed.
         Problems: 
-            -   It use a global variable in a recursive function. (beacause of the bad algorthm)
-            -   When it try to count the number of the sentences in the string
-                it just increase a variable, but this isn't correct here. 
+            -   It uses a global variable in a recursive function. (beacause of the bad algorthm)
+            -   When it tries to count the number of the sentences in the string
+                it just increases a variable, but this isn't correct here. 
             -   It only returns true value, instead of the counted value.
             -   It returns dummy value because of the algorithm implementation is bad.
-            -   The algorithm is to complex, but it can be much light weighter.
+            -   The algorithm is too slow, but it can be much faster.
 """
 
 count = 0
