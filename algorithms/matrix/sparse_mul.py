@@ -33,8 +33,8 @@ def multiply(self, a, b):
     if a is None or b is None:
         return None
     m, n, l = len(a), len(b[0]), len(b[0])
-    if len(b) != n:
-        raise Exception("A's column number must be equal to B's row number.")
+    column_equal_row(b,n)
+    
     c = [[0 for _ in range(l)] for _ in range(m)]
     for i, row in enumerate(a):
         for k, eleA in enumerate(row):
@@ -55,8 +55,8 @@ def multiply(self, a, b):
     if a is None or b is None:
         return None
     m, n, l = len(a), len(a[0]), len(b[0])
-    if len(b) != n:
-        raise Exception("A's column number must be equal to B's row number.")
+    column_equal_row(b,n)
+    
     c = [[0 for _ in range(l)] for _ in range(m)]
     table_b = {}
     for k, row in enumerate(b):
@@ -82,8 +82,8 @@ def multiply(self, a, b):
     if a is None or b is None:
         return None
     m, n = len(a), len(b[0])
-    if len(b) != n:
-        raise Exception("A's column number must be equal to B's row number.")
+    column_equal_row(b,n)
+    
     l = len(b[0])
     table_a, table_b = {}, {}
     for i, row in enumerate(a):
@@ -106,3 +106,8 @@ def multiply(self, a, b):
             for j in table_b[k]:
                 c[i][j] += table_a[i][k] * table_b[k][j]
     return c
+
+# raise error if column number not equal with row number
+def column_equal_row(b,n):
+    if len(b) != n:
+        raise ValueError("A's column number must be equal to B's row number.")
