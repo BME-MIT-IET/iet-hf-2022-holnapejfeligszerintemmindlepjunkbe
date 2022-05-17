@@ -10,7 +10,7 @@ from algorithms.tree.b_tree import BTree
 
 from algorithms.tree import construct_tree_postorder_preorder as ctpp
 
-from algorithms.tree.fenwick_tree.fenwick_tree import Fenwick_Tree
+from algorithms.tree.fenwick_tree.fenwick_tree import FenwickTree
 
 import unittest
 
@@ -147,7 +147,7 @@ class TestConstructTreePreorderPostorder(unittest.TestCase):
 class TestFenwickTree(unittest.TestCase):
     def test_construct_tree_with_update_1(self):
         freq = [2, 1, 1, 3, 2, 3, 4, 5, 6, 7, 8, 9]
-        ft = Fenwick_Tree(freq)
+        ft = FenwickTree(freq)
         bit_tree = ft.construct()
         self.assertEqual(12, ft.get_sum(bit_tree, 5))
 
@@ -157,7 +157,7 @@ class TestFenwickTree(unittest.TestCase):
 
     def test_construct_tree_with_update_2(self):
         freq = [1, 2, 3, 4, 5]
-        ft = Fenwick_Tree(freq)
+        ft = FenwickTree(freq)
         bit_tree = ft.construct()
         self.assertEqual(10, ft.get_sum(bit_tree, 3))
 
@@ -167,7 +167,7 @@ class TestFenwickTree(unittest.TestCase):
 
     def test_construct_tree_with_update_3(self):
         freq = [2, 1, 4, 6, -1, 5, -32, 0, 1]
-        ft = Fenwick_Tree(freq)
+        ft = FenwickTree(freq)
         bit_tree = ft.construct()
         self.assertEqual(12, ft.get_sum(bit_tree, 4))
 
