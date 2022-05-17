@@ -389,6 +389,7 @@ class TestLimit(unittest.TestCase):
         self.assertListEqual(limit([1, 2, 3, 4, 5], 2, 4), [2, 3, 4])
         self.assertListEqual(limit([1, 2, 3, 4, 5], 2), [2, 3, 4, 5])
         self.assertListEqual(limit([1, 2, 3, 4, 5], None, 4), [1, 2, 3, 4])
+        self.assertListEqual(limit([], 2, None), [])
 
 
 class TestNSum(unittest.TestCase):
