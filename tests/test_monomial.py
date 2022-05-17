@@ -63,8 +63,6 @@ class TestSuite(unittest.TestCase):
 		self.assertEqual(self.m1 + self.m9, Monomial({}, 2))
 		self.assertEqual(self.m1 + self.m12, Monomial({}, 0))
 
-		return
-
 	def test_monomial_subtraction(self):
 
 		# Monomials with different underlying variables or
@@ -102,8 +100,6 @@ class TestSuite(unittest.TestCase):
 		self.assertEqual(self.m1 - self.m9, Monomial({}, -2))
 		self.assertEqual(self.m1 - self.m12, Monomial({}, 0))
 
-		return
-
 	def test_monomial_multiplication(self):
 
 		# Usual multiplication.
@@ -120,8 +116,6 @@ class TestSuite(unittest.TestCase):
 		# Test usual float multiplication.
 		self.assertEqual(self.m7 * self.m3, Monomial({1: 4, 2: -1, 7: 2},
 		                                             -1.5*math.pi))
-
-		return
 
 	def test_monomial_inverse(self):
 
@@ -142,7 +136,6 @@ class TestSuite(unittest.TestCase):
 		# Should work fine without variables too!
 		self.assertTrue(self.m6.inverse(), Monomial({}, Fraction(-100, 227)))
 		self.assertEqual(self.m6.inverse(), Monomial({}, -1/2.27))
-		return
 
 	def test_monomial_division(self):
 		# Any monomial divided by the Zero Monomial should raise a ValueError.
@@ -157,8 +150,6 @@ class TestSuite(unittest.TestCase):
 		self.assertEqual(self.m7 / self.m3, Monomial({2: 1, 7: 2},
 		                                             -2 * math.pi / 3))
 		self.assertEqual(self.m14 / self.m13, Monomial({1: 1}) * Fraction(-3, 2))
-
-		return
 
 	def test_monomial_substitution(self):
 		# Test with int.
@@ -186,8 +177,6 @@ class TestSuite(unittest.TestCase):
 		self.assertEqual(self.m8.substitute(2), 0)
 		self.assertEqual(self.m8.substitute({1231: 2, 1: 2}), 0)
 
-		return
-
 	def test_monomial_all_variables(self):
 
 		# Any variable with zero power should not exist in the set
@@ -197,8 +186,6 @@ class TestSuite(unittest.TestCase):
 
 		# The zero monomial should output empty set.
 		self.assertEqual(self.m8.all_variables(), set())
-
-		return
 
 	def test_monomial_clone(self):
 
@@ -213,7 +200,6 @@ class TestSuite(unittest.TestCase):
 		self.assertEqual(self.m1, self.m1.clone())
 		self.assertEqual(self.m8, self.m1.clone())
 		self.assertEqual(self.m8, self.m8.clone())
-		return
 
 
 if __name__ == '__main__':
