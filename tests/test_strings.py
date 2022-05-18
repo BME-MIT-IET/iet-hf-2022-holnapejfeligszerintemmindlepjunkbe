@@ -127,6 +127,10 @@ class TestDomainExtractor(unittest.TestCase):
         self.assertEqual(domain_name_1("https://github.com/SaadBenn"),
                          "github")
 
+    def test_valid(self):
+        self.assertEqual(domain_name_1("http://www.google.hu/"),
+                         "google")
+
     def test_invalid(self):
         self.assertEqual(domain_name_2("http://google.com"), "google")
 
@@ -495,6 +499,7 @@ class TestCheckPangram(unittest.TestCase):
 class TestContainString(unittest.TestCase):
     def test_contain_string(self):
         self.assertEqual(-1, contain_string("mississippi", "issipi"))
+        self.assertEqual(-1, contain_string("mississippi", "mississippiippis"))
         self.assertEqual(0, contain_string("Hello World", ""))
         self.assertEqual(2, contain_string("hello", "ll"))
 
@@ -560,6 +565,7 @@ class TestFirstUniqueChar(unittest.TestCase):
     def test_first_unique_char(self):
         self.assertEqual(0, first_unique_char("leetcode"))
         self.assertEqual(2, first_unique_char("loveleetcode"))
+        self.assertEqual(-1, first_unique_char("aabb"))
 
 
 class TestRepeatSubstring(unittest.TestCase):
@@ -703,6 +709,8 @@ class TestFizzbuzz(unittest.TestCase):
         # Testing that a string returns a Type Error.
         self.assertRaises(TypeError, fizzbuzz.fizzbuzz, "hello")
 
+        
+
         # Testing a base case, n = 3
         result = fizzbuzz.fizzbuzz(3)
         expected = [1, 2, "Fizz"]
@@ -715,6 +723,13 @@ class TestFizzbuzz(unittest.TestCase):
 
         # Testing a base case, n = 15 i.e. mod 3 and 5
         result = fizzbuzz.fizzbuzz(15)
+        expected = [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11,
+                    "Fizz", 13, 14, "FizzBuzz"]
+        self.assertEqual(result, expected)
+
+        #testnig alternative solutions
+        # Testing a base case, n = 15 i.e. mod 3 and 5
+        result = fizzbuzz.fizzbuzz_with_helper_func(15)
         expected = [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11,
                     "Fizz", 13, 14, "FizzBuzz"]
         self.assertEqual(result, expected)

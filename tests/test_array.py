@@ -1,3 +1,5 @@
+import io
+import sys
 from algorithms.arrays import (
     delete_nth, delete_nth_naive,
     flatten_iter, flatten,
@@ -158,6 +160,9 @@ class TestLongestNonRepeat(unittest.TestCase):
         string = "asjrgapa"
         self.assertEqual(longest_non_repeat_v1(string), 6)
 
+        string = None
+        self.assertEqual(longest_non_repeat_v1(string), 0)
+
     def test_longest_non_repeat_v2(self):
 
         string = "abcabcbb"
@@ -175,6 +180,9 @@ class TestLongestNonRepeat(unittest.TestCase):
         string = "asjrgapa"
         self.assertEqual(longest_non_repeat_v2(string), 6)
 
+        string = None
+        self.assertEqual(longest_non_repeat_v2(string), 0)
+
     def test_get_longest_non_repeat_v1(self):
         string = "abcabcbb"
         self.assertEqual(get_longest_non_repeat_v1(string), (3, 'abc'))
@@ -191,6 +199,9 @@ class TestLongestNonRepeat(unittest.TestCase):
         string = "asjrgapa"
         self.assertEqual(get_longest_non_repeat_v1(string), (6, 'sjrgap'))
 
+        string = None
+        self.assertEqual(get_longest_non_repeat_v1(string), (0, ''))
+
     def test_get_longest_non_repeat_v2(self):
         string = "abcabcbb"
         self.assertEqual(get_longest_non_repeat_v2(string), (3, 'abc'))
@@ -206,6 +217,9 @@ class TestLongestNonRepeat(unittest.TestCase):
 
         string = "asjrgapa"
         self.assertEqual(get_longest_non_repeat_v2(string), (6, 'sjrgap'))
+
+        string = None
+        self.assertEqual(get_longest_non_repeat_v2(string), (0, ''))
 
 
 class TestMaxOnesIndex(unittest.TestCase):
@@ -331,6 +345,8 @@ class TestRotateArray(unittest.TestCase):
                              [1, 2, 3, 4, 5, 6, 7])
         self.assertListEqual(rotate_v3([1, 2], k=111), [2, 1])
 
+        self.assertEqual(rotate_v3(None, k=3), None)
+
 
 class TestSummaryRanges(unittest.TestCase):
 
@@ -342,6 +358,8 @@ class TestSummaryRanges(unittest.TestCase):
                              [(-5, -3), (1, 2), (4, 6)])
         self.assertListEqual(summarize_ranges([-2, -1, 0, 1, 2]),
                              [(-2, 2)])
+
+        self.assertEqual(summarize_ranges([4]), ['4'])
 
 
 class TestThreeSum(unittest.TestCase):
@@ -389,6 +407,7 @@ class TestLimit(unittest.TestCase):
         self.assertListEqual(limit([1, 2, 3, 4, 5], 2, 4), [2, 3, 4])
         self.assertListEqual(limit([1, 2, 3, 4, 5], 2), [2, 3, 4, 5])
         self.assertListEqual(limit([1, 2, 3, 4, 5], None, 4), [1, 2, 3, 4])
+        self.assertListEqual(limit([], 2, None), [])
 
 
 class TestNSum(unittest.TestCase):
@@ -429,3 +448,4 @@ class TestNSum(unittest.TestCase):
 if __name__ == '__main__':
 
     unittest.main()
+
