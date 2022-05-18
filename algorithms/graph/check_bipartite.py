@@ -24,7 +24,8 @@ def check_bipartite(adj_list):
         current = queue.pop(0)
 
         # If there is a self-loop, it cannot be bipartite
-        if adj_list[current][current]:
+        temp = adj_list[current]
+        if temp[current]:
             return False
 
         for adjacent in range(vertices):
