@@ -3,6 +3,8 @@
 
 ### Választott projekt ismertetése:
 
+Egy sok ember által fejlesztett hasznos matematikai algoritmusokat tartalmazó könyvtár python nyelven.
+
 A feladat során általunk kiválasztott részfeladatok mellett a döntésünk:
 
 ### Technológia fókusz
