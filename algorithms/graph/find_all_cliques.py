@@ -4,6 +4,7 @@ graph such that the subgraph is fully connected (ie. for any pair of nodes in
 the subgraph there is an edge between them).
 """
 
+
 def find_all_cliques(edges):
     """
     takes dict of sets

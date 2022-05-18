@@ -25,7 +25,7 @@ def dfs(source,visited,adjacency_list):
     visited[source] = True
     for child in adjacency_list[source]:
         if not visited[child]:
-            dfs(child,visited,adjacency_list)
+            dfs(child, visited, adjacency_list)
 
 def count_components(adjacency_list,size):
     '''

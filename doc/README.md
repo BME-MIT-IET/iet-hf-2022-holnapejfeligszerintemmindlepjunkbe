@@ -1,30 +1,24 @@
-# Installing GUIDE
+# Integrációs és ellenőrzési technikák
+## Házi feladat
 
-## Alapvető lépések
-- 1. leszedi a lib-et, de source-ból futtadtva nem kell
-<br /> ```pip3 install algorithms```
-- 2. virtuális env létrehozásához, mert a default nem a legtökéletesebb
-<br /> ```python -m pip install --user virtualenv``` 
-- 3. virtual env létrehozása 
-<br /> ```virtualenv -p python3 <projekt elérési út/ ahova szeretnénk a virtual env-et>```
-- 4. projekt inicializálása 
-<br /> ```.\Scripts\activate.bat```  
+### Választott projekt ismertetése:
 
-## Unit tesztek futtatása
-- 1. pytest installálása
-<br /> ```pip install pytest``` 
-- 2. test lefedetség nézése
-<br /> ```pip install pytest-cov```
-- 4. testek futtatása
-<br /> ```python -m pytest```
-- 3. testek futtatása lefedetség vizsgálattal (csak az algorithms könyvtárra érdemes)
-<br /> ```python -m pytest -v --cov .\algorithms\```
+A feladat során általunk kiválasztott részfeladatok mellett a döntésünk:
 
-## Style-checking tool
-- 1. flake8 install
-<br /> ```pip install flake8``` 
-- 2 futtatás adott könyvtárra (egészre futtatva túl sok miatt szól)
-<br /> ```python -m flake8 .\algorithms\sort\```  
+### Technológia fókusz
+<ol>
+<li>Build keretrendszer beüzemelése: Ez egy matematikai algoritmusokat tartalmazó könyvtár, így build keretrendszer beüzemelését nem éreztük kifejezetten a projekthez illő feladatnak.</li>
+<li>Manuális kód átvizsgálás elvégzése: A projekten pylint került csak alkalmazásra, így érdekesnek tartottuk összevetni mit fog számunkra a SonarCloud feltárni.</li>
+<li>Deployment segítése: Továbbra is ez egy matematikai algoritmusokat tartalmazó library, így ennek a deploy-olásának nem látjuk az értelmét.</li>
+<li>Egységtesztek készítése/kiegészítése: A projekt már eleve tartalmazott ugyan UNIT teszteket, viszont ezek sok helyen nem értek el teljes lefedettséget és még egyesek hibába is futottak.</li>
+</ol>
 
-## Kiegészítés
-- Esetleg szükség lehet environment variables beállítására.
+### Termék/felhasználó fókusz
+
+<ol>
+<li>Nem-funkcionális jellemzők vizsgálata: Mivel algoritmusokról van szó, így a teljesítmény kifejezetten érdekes vizsgálati területnek találtuk, amely egyaránt fontos is.</li>
+<li>UI tesztek készítése: : Az általunk vizsgált projektnek nincsen felhasználói felülete, így ezen tesztek elkészítése nem lehetséges.</li>
+<li>BDD tesztek készítése: BDD tesztek készítésével még nem foglalkoztunk, így szerettük volna megismerni, és konzultáció után alkalmasnak is tekintettük erre a feladatra.</li>
+<li>Manuális tesztek megtervezése: Az általunk vizsgált projektnek nincsen felhasználói felülete, így ezen tesztek elvégzése és dokumentálásának nincs értelme.</li>
+</ol>
+
