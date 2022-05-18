@@ -393,7 +393,6 @@ class Polynomial:
 
         else:
             raise ValueError('Can only subtract int, float, Fraction, Monomials, or Polynomials from Polynomials.')
-            return
 
     # def __mul__(self, other: Union[int, float, Fraction, Monomial, Polynomial]) -> Polynomial:
     def __mul__(self, other: Union[int, float, Fraction, Monomial]):
@@ -460,8 +459,6 @@ class Polynomial:
                 return self.__truediv__(only)
 
         raise ValueError('Can only divide a polynomial by an int, float, Fraction, or a Monomial.')
-
-        return
 
     # def clone(self) -> Polynomial:
     def clone(self):

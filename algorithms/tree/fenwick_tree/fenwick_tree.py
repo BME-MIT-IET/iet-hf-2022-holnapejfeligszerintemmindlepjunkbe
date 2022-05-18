@@ -19,7 +19,7 @@ There are two solutions that can perform both the query and update operations in
 Compared with Segment Tree, Binary Indexed Tree requires less space and is easier to implement.
 """
 
-class Fenwick_Tree(object):
+class FenwickTree(object):
     def __init__(self, freq):
         self.arr = freq
         self.n = len(freq)

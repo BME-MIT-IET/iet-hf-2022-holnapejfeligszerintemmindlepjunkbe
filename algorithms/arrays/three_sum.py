@@ -36,13 +36,15 @@ def three_sum(array):
                 # found three sum
                 res.add((array[i], array[l], array[r]))
 
-                # remove duplicates
-                while l < r and array[l] == array[l + 1]:
-                    l += 1
-
-                while l < r and array[r] == array[r - 1]:
-                    r -= 1
+                __remove_duplicates(array,l,r)
 
                 l += 1
                 r -= 1
     return res
+
+def __remove_duplicates(array,l,r):
+    while l < r and array[l] == array[l + 1]:
+        l += 1
+
+    while l < r and array[r] == array[r - 1]:
+        r -= 1

@@ -29,7 +29,7 @@ class RandomizedSet():
         self.elements.append(new_one)
 
     def remove(self, old_one):
-        if not old_one in self.index_map:
+        if old_one not in self.index_map:
             return
         index = self.index_map[old_one]
         last = self.elements.pop()

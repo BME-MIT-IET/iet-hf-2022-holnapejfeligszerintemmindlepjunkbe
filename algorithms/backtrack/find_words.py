@@ -52,16 +52,7 @@ def find_words(board, words):
                       pre+board[i][j], used, result)
             used[i][j] = False
 
-    # make a trie structure that is essentially dictionaries of dictionaries
-    # that map each character to a potential next character
-    trie = {}
-    for word in words:
-        curr_trie = trie
-        for char in word:
-            if char not in curr_trie:
-                curr_trie[char] = {}
-            curr_trie = curr_trie[char]
-        curr_trie['#'] = '#'
+    trie = __make_trie_structure(words)
 
     # result is a set of found words since we do not want repeats
     result = set()
@@ -71,3 +62,16 @@ def find_words(board, words):
         for j in range(len(board[0])):
             backtrack(board, i, j, trie, '', used, result)
     return list(result)
+
+# make a trie structure that is essentially dictionaries of dictionaries
+# that map each character to a potential next character
+def __make_trie_structure(words):
+    trie = {}
+    for word in words:
+        curr_trie = trie
+        for char in word:
+            if char not in curr_trie:
+                curr_trie[char] = {}
+            curr_trie = curr_trie[char]
+        curr_trie['#'] = '#'
+    return trie

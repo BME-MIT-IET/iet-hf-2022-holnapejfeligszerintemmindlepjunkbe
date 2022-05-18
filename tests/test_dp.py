@@ -158,7 +158,7 @@ class TestIntDivide(unittest.TestCase):
         self.assertEqual(204226, int_divide(50))
 
 
-class Test_dp_K_Factor(unittest.TestCase):
+class TestDpKFactor(unittest.TestCase):
     def test_kfactor(self):
         # Test 1
         n1 = 4

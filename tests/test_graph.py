@@ -131,7 +131,7 @@ class TestMaximumFlow(unittest.TestCase):
         self.assertEqual(19, dinic(capacity, 0, 6))
 
 
-class TestMaximum_Flow_Bfs(unittest.TestCase):
+class TestMaximumFlowBfs(unittest.TestCase):
 
     """
     Test for the file def maximum_flow_bfs.py
@@ -152,7 +152,7 @@ class TestMaximum_Flow_Bfs(unittest.TestCase):
         self.assertEqual(maximum_flow, 23)
 
 
-class TestMaximum_Flow_Dfs(unittest.TestCase):
+class TestMaximumFlowDfs(unittest.TestCase):
 
     """
     Test for the file def maximum_flow_dfs.py
@@ -173,7 +173,7 @@ class TestMaximum_Flow_Dfs(unittest.TestCase):
         self.assertEqual(maximum_flow, 23)
 
 
-class TestAll_Pairs_Shortest_Path(unittest.TestCase):
+class TestAllPairsShortestPath(unittest.TestCase):
     def test_all_pairs_shortest_path(self):
         graph = [[0, 0.1, 0.101, 0.142, 0.277],
                  [0.465, 0, 0.191, 0.192, 0.587],

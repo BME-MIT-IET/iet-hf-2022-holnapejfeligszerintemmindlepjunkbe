@@ -184,8 +184,11 @@ class TestFindWords(unittest.TestCase):
         ]
 
         words = ["oath", "pea", "eat", "rain"]
-        self.assertEqual(find_words(board, words).sort(),
-                         ['oath', 'eat'].sort())
+        result = find_words(board, words)
+        result.sort()
+        test_result = ['oath', 'eat']
+        test_result.sort()
+        self.assertEqual(result,test_result)
 
     def test_none(self):
         board = [

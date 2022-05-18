@@ -47,8 +47,6 @@ class TestSuite(unittest.TestCase):
 
 		self.m1 = Monomial({1: 2, 2: 3}, -1)
 
-		return
-
 	def test_polynomial_addition(self):
 		
 		# The zero polynomials should add up to
@@ -79,8 +77,6 @@ class TestSuite(unittest.TestCase):
 			Monomial({1: -1, 3: 2})
 		]))
 
-		return
-
 	def test_polynomial_subtraction(self):
 
 		self.assertEqual(self.p3 - self.p2, Polynomial([
@@ -93,8 +89,6 @@ class TestSuite(unittest.TestCase):
 			Monomial({1: 2, 2: -1}, -1.5)
 		]))
 
-		pass
-
 	def test_polynomial_multiplication(self):
 		self.assertEqual(self.p0 * self.p2, Polynomial([]))
 		self.assertEqual(self.p1 * self.p2, Polynomial([]))
@@ -103,7 +97,6 @@ class TestSuite(unittest.TestCase):
 			Monomial({1: 2}, 4),
 			Monomial({1: 3, 2: -1}, Fraction(3, 1))
 		]))
-		return
 
 	def test_polynomial_division(self):
 
@@ -124,7 +117,6 @@ class TestSuite(unittest.TestCase):
 			Monomial({1: -1, 2: -3}, 2),
 			Monomial({2: -4}, 1.5)
 		]))
-		return
 
 	def test_polynomial_variables(self):
 		# The zero polynomial has no variables.
@@ -138,7 +130,6 @@ class TestSuite(unittest.TestCase):
 
 		# The monomials with coefficient 0 should be dropped.
 		self.assertEqual(self.p5.variables(), {1, 3})
-		return
 
 	def test_polynomial_subs(self):
 		# Anything substitued in the zero polynomial
@@ -154,7 +145,6 @@ class TestSuite(unittest.TestCase):
 		self.assertAlmostEqual(self.p4.subs({1: 1, 2: 1, 3: 1}), (1 + math.pi + Fraction(2, 3)), delta=1e-9)
 		# Should work fine if more than enough substitutions are provided.
 		self.assertAlmostEqual(self.p4.subs({1: 1, 2: 1, 3: 1, 4: 1}), (1 + math.pi + Fraction(2, 3)), delta=1e-9)
-		return
 
 	def test_polynomial_clone(self):
 
@@ -172,4 +162,3 @@ class TestSuite(unittest.TestCase):
 		self.assertEqual(self.p5.clone(), Polynomial([
 			Monomial({1: -1, 3: 2}, 1)
 		]))
-		return

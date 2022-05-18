@@ -422,7 +422,7 @@ class TestNSum(unittest.TestCase):
                                sum_closure=lambda a, b: [a[0] + b[1],
                                a[1] + b[0]],  # noqa: E501
                                compare_closure=lambda a, b: -1 if a[0] < b
-                               else 1 if a[0] > b else 0),  # noqa: E501
+                               else ( 1 if a[0] > b  else 0)),  # noqa: E501
                          [[[-9, 5], [8, 4]]])  # noqa: E501
 
 
