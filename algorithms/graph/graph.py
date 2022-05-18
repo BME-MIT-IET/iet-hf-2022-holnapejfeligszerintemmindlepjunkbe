@@ -65,7 +65,8 @@ class DirectedEdge:
         return False
 
     def __repr__(self):
-        return f"({self.source} -> {self.target})"
+        return 'string' #f'({self.source} -> {self.target})'
+
 
 class DirectedGraph:
     """
