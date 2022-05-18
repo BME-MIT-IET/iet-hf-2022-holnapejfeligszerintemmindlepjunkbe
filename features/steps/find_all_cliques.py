@@ -1,20 +1,25 @@
 from behave import *
 
+from algorithms.graph.find_all_cliques import find_all_cliques
+
 cliques = []
 edges = []
 
 
 @given('we have a graph given by edges')
 def init_graph(context):
-    edges = [[0, 1], [1, 2], [2, 0]]
+    global edges
+    edges = {'0': {0, 1}, '1': {1, 2}, '2': {2, 0}}
 
 
 @when('we find all cliques')
-def init_graph(context):
-    from algorithms.graph.find_all_cliques import find_all_cliques
+def execute_find(context):
+    global edges, cliques
     cliques = find_all_cliques(edges)
 
 
-@then('the number of cliques is 1')
-def init_graph(context):
+@then('the number of cliques is 3')
+def assert_result(context):
+    global cliques
     assert (len(cliques) == 3)
+

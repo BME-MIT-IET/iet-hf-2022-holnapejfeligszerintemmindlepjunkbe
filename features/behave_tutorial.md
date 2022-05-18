@@ -1,9 +1,9 @@
 
-# Cucumber
+# Cucumber / Behave
 ## Alapok
-- A Cucumber Pythonos implementációját **Behave**-nek nevezik
-Ennek installálásá:
-*pip install behave*
+- A Cucumber Pythonos implementációja a **Behave**.
+Ennek installálásá a 
+*pip install behave* paranccsal végezhető el.
 
 - A *Behave* *.feature* fájlokban leírt forgatókönyveket (**Scenario**) futtat. Ezek a **Gherkin** szintaxist használják.
 A *Pycharm* IDE rendelkezik *Gherkin* nyelvi támogatást biztosító pluginnel.
@@ -19,3 +19,16 @@ A *Pycharm* IDE rendelkezik *Gherkin* nyelvi támogatást biztosító pluginnel.
 
 
 - A *Behave* futtatásához a *features* könyvtárat tartalmazó könyvtárban parancssorban adjuk ki a *behave* utasítást!
+
+- A *Behave* kilistázza, hogy *Feature*, *Scenario* és *Step* szinten hány elem futása zárult sikerrel vagy lett sikertelen.
+
+- A *.feature* fájlban lehetőség van különböző bemenetek definiálására. A *Given* step alatt közvetlenül táblázatos formában adhatunk meg paramétereket és ezek értékeit.
+ 
+pl.:   
+| name | job    |   
+|Peter | waiter |   
+| John | actor  |
+
+Ezeket az értékeket a tesztek forráskódjában a *context.table* listán iterálva érhetjük el.
+
+## Behavior Driven Development
